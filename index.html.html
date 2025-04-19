@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bolos</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f0;
+  color: #333;
+}
+
+header {
+  background-color: #FF1493;
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: pink;
+}
+
+nav a {
+  color: black;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: white;
+}
+
+section {
+  padding: 20px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+footer {
+  background-color: #FF1493;
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #FF69B4;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #F4A460;
+}
+
+.whatsapp-contact a {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.whatsapp-contact a:hover {
+  background-color: #1ebe5b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Delícias no pote</h1>
+  <p>Bolos de pote deliciosos, feitos à mão com muito amor!</p>
+</header>
+
+<nav>
+  <a href="#about">Sobre</a>
+  <a href="#sabores">Sabores</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section id="about">
+  <h2>Sobre nós</h2>
+  <p>Sou apaixonada por confeitaria e oferecemos bolos de pote saborosos e irresistíveis.<br> Ideal para presentear alguém ou se deliciar em qualquer momento. Aproveite!</p>
+</section>
+
+<section id="sabores">
+  <h2>Nossos Sabores</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Prestígio</h3>
+      
+    </div>
+
+    <div class="service-card">
+      <h3>Ninho com Nutella</h3>
+      
+    </div>
+
+    <div class="service-card">
+      <h3>Ninho</h3>
+     
+    </div>
+
+    <div class="service-card">
+      <h3>Oreo</h3>
+	  
+      </div>
+	  
+	  <div class="service-card">
+	  <h3>Chocolate</h3>
+	  
+    </div>
+	
+	<div class="service-card">
+	<h3>Beijinho</h3>
+	
+	</div>
+	
+	<div class="service-card">
+	<h3>Chocolate com Morango</h3>
+	
+	</div>
+	
+	<div class="service-card">
+	<h3>Ninho com Morango</h3>
+	
+	</div>
+	
+	<div class="service-card">
+	<h3>Chocolate com Nutella</h3>
+	
+	</div>
+  </div>
+</section>
+
+<section id="contato">
+  <h2>Faça seu Pedido</h2>
+  <p>Entre em contato para encomendar seus bolos de pote preferidos!</p>
+
+  <form id="pedidoForm">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <textarea id="mensagem" placeholder="Sabores desejados e quantidades" rows="5" required></textarea>
+    <button type="submit">Enviar Pedido</button>
+  </form>
+
+  <div class="whatsapp-contact">
+    <p>Ou entre em contato para mais informações:</p>
+    <a id="whatsappLink" href="https://wa.me/5516991918705?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20valores%20dos%20bolos" target="_blank">
+	Falar pelo WhatsApp
+	</a>
+  </div>
+</section>
+
+<footer>
+  <p>Delícias no Pote &copy; 2025. Feito com amor e açúcar!</p>
+</footer>
+
+<script>
+document.getElementById("pedidoForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const pedidos = document.getElementById("mensagem").value;
+  const numeroLoja = "5516991918705";
+
+  const texto = `Olá,  meu nome é ${nome} e gostaria de fazer esses pedidos: ${pedidos}`;
+  const url = `https://wa.me/${numeroLoja}?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, "_blank");
+});
+</script>
+
+</body>
+</html>
